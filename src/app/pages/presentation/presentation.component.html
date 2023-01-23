@@ -1,0 +1,56 @@
+<h1>Présentation</h1>
+
+<section>
+  <h2>Installation</h2>
+
+  <p>Créer un projet Angular : </p>
+  <p>
+    <code>ng new mon-projet</code>
+  </p>
+
+  <p>Créer un composant</p>
+  <p>
+    <code>ng generate component repertoire/mon-composant ( --skip-tests )</code>
+  </p>
+  <p>
+    <code>ng g c ....</code>
+  </p>
+
+  <p>Un composant est composé de 3 fichiers : </p>
+  <ul>
+    <li>Logique : .ts -> classe typescript</li>
+    <li>Template : .html -> HTML amélioré</li>
+    <li>Style : .css -> style associé au composant, valable uniquement pour le composant</li>
+  </ul>
+
+</section>
+
+<section>
+  <h2>Syntaxe de template</h2>
+
+  <h3>Interpolation</h3>
+
+  <p>Interpréter des expressions JS dans le template</p>
+  <p>{{message}}</p>
+  <p>1 + 1 = {{1 + 1}}</p>
+  <p>{{message.toUpperCase()}}</p>
+  <p>{{displayText()}}</p>
+  <p>Rien : {{displayVoid()}}</p>
+
+  <p>Dans les balises moustaches, on peut afficher n'importe
+  quelle expression JS, tant qu'elle retourne quelque chose.
+  </p>
+
+  <h3>Data Binding / Attribute Binding</h3>
+
+  <figure>
+    <img [src]="my_image" [alt]="image_desc" />
+    <figcaption>{{image_desc}}</figcaption>
+  </figure>
+
+  <figure>
+    <img [src]="coffee.url" [alt]="coffee.description">
+  </figure>
+</section>
+
+
