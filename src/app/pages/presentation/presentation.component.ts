@@ -19,5 +19,4 @@ export class PresentationComponent {
     return 'Some text from a function'
   }
   displayVoid() {}
-
 }

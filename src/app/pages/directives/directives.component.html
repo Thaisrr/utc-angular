@@ -1,0 +1,192 @@
+<h1>Les Directives</h1>
+
+
+<section>
+  <h2>Affichage conditionnel</h2>
+
+  <p>Connecté⋅e : {{is_logged}}</p>
+
+  <p>{{is_logged? 'Bonjour Jean Michel' : 'Veuillez vous connecter'}}</p>
+
+  <button (click)="login()">{{is_logged? 'Logout': 'Login'}}</button>
+
+  <p>En Angular, les événements sont mis entre (parenthèse.)</p>
+  <p>On retrouve les événements natifs, ( onclick, onmouseover, onsubmit...).</p>
+  <p>En Angular, on enlève le "on", et on les mets entre parenthèses.</p>
+
+  <div *ngIf="is_logged">
+    <h3>Mon profil</h3>
+    <p>Infos sur le profil...</p>
+    <p>
+      <button>Action 1</button>
+      <button>Action 2</button>
+      <button>Action 3</button>
+    </p>
+  </div>
+  <div *ngIf="!is_logged">
+    <h3>Veuillez vous connecter pour accéder à vos infos.</h3>
+  </div>
+
+
+  <h3>Autre syntaxe : If - Else</h3>
+
+  <p *ngIf="is_logged; else notLoggedBlock">Connecté⋅e ( if )</p>
+  <ng-template #notLoggedBlock>
+    <p>Pas connecté⋅e ( else )</p>
+  </ng-template>
+  <p>Ici, si la condition n'est pas vrai, Angular injecte le contenu du
+  ng-template à la place du paragraphe sur lequel est mis le *ngIf.</p>
+
+  <h3>If : then, else</h3>
+
+  <ng-container *ngIf="is_logged; then logged; else notLogged"></ng-container>
+  <ng-template #logged>
+    <ng-container *ngIf="role === 'USER'; then user; else admin"></ng-container>
+    <ng-template #user>
+      <p >Welcome back Jean Michel !</p>
+    </ng-template>
+    <ng-template #admin>
+      <p>Time to do some stuff !</p>
+    </ng-template>
+  </ng-template>
+  <ng-template #notLogged>
+    <p>Please, login !</p>
+  </ng-template>
+
+
+  <h2>Ng Switch</h2>
+
+  <div [ngSwitch]="role">
+    <p *ngSwitchCase=" 'ADMIN' ">Vous êtes admin</p>
+    <p *ngSwitchCase=" 'SUPER' ">Vous êtes tout⋅e puissant⋅e</p>
+    <p *ngSwitchCase=" 'USER'">Bouhhh ! Nullos !</p>
+    <p *ngSwitchDefault>Mais qui êtes vous ?</p>
+  </div>
+</section>
+
+<section>
+  <h2>Listes</h2>
+
+  <p>*ngFor permet de créer un noeux, de répéter un élément / un block HTML
+  pour chaque élément d'une liste.
+  </p>
+
+  <h3>Mes produits :</h3>
+  <p>{{produits}}</p>
+
+  <ul>
+    <li *ngFor="let prod of produits">{{prod}}</li>
+  </ul>
+
+  <h2>Encore des articles : </h2>
+
+  <p>Panier :</p>
+  <ul>
+    <li>Quantité: {{my_panier.products.length}}</li>
+    <li>Total: {{my_panier.total}}€</li>
+  </ul>
+
+  <div class="grid">
+    <div *ngFor="let article of all_articles" class="card">
+      <h4>{{article.title}}</h4>
+      <p>{{article.description}}</p>
+      <p>Quantité: {{article.quantity}}</p>
+      <div>
+        <button [disabled]="article.quantity <= 0" (click)="addToPanier(article)">Panier</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Les Pipes</h2>
+
+  <p>Les pipes sont des fonctions qui permettent de modifier un
+  élément affiché.
+  </p>
+  <p>La valeur de base de l'élément ne change pas, la modification
+  se fait uniquement sur l'affichage.
+  </p>
+  <p><b>Pour formater l'affichage</b></p>
+
+  <h3>Texte</h3>
+
+  <ul>
+    <li>{{message}}</li>
+    <li>{{message | uppercase}}</li>
+    <li>{{message | lowercase}}</li>
+    <li>{{message | titlecase}}</li>
+  </ul>
+
+  <h3>Number</h3>
+  <!--
+  nombre de chiffre mini avant la virgule
+  .
+  nombre mini de décimales
+  -
+  nombre maxi de décimales
+  -->
+
+  <ul>
+    <li>{{pi}}</li>
+    <li>{{pi | number}}</li>
+    <li>{{pi | number: '2.1-2'}}</li>
+    <li>{{5 | number: '2.1-2'}}</li>
+  </ul>
+
+  <h3>Dates</h3>
+  <ul>
+    <li>{{today}}</li>
+    <li>{{today | date}}</li>
+    <li>{{today | date: 'dd/MM/YYYY'}}</li>
+  </ul>
+  <p>Toutes les possibilités <a href="https://angular.io/api/common/DatePipe">ici</a> </p>
+
+  <h2>Pipes personnalisés</h2>
+
+  <p>On peut créer un nouveau pipe avec la ligne suivante :</p>
+  <p><code>ng g p mon_pipe</code></p>
+
+  <p>{{'Mon super message' | rainbow}}</p>
+  <p>{{message | titlecase | rainbow}}</p>
+
+  <h3>Encore des articles</h3>
+
+  <div class="grid">
+    <div *ngFor="let article of filteredArticle" class="card">
+      <h4>{{article.title}}</h4>
+      <p>{{article.description}}</p>
+      <p>Quantité: {{article.quantity}}</p>
+      <div>
+        <button [disabled]="article.quantity <= 0" (click)="addToPanier(article)">Panier</button>
+      </div>
+    </div>
+  </div>
+
+  <h3>Encore des articles ( Pipe )</h3>
+
+  <p>
+    <!-- <input [value]="recherche" (input)="handleInput($event)" type="search" placeholder="Chercher..."/> -->
+    <input [(ngModel)]="recherche" type="search" placeholder="Chercher..."/>
+  <!--  <input [ngModel]="recherche" (ngModelChange)="recherche = $event" type="search" placeholder="Chercher..."/> -->
+  </p>
+  <p>Vous avez cherché : {{recherche}}</p>
+  <div class="flex">
+    <button [class]="article_filter === 'all'? 'active': ''" (click)="article_filter='all'">Toutes</button>
+    <button [class.active]="article_filter === 'dispo'" (click)="article_filter='dispo'">Disponibles</button>
+  </div>
+  <div class="grid">
+    <div *ngFor="let article of all_articles | filter: article_filter | search: recherche " class="card">
+      <h4>{{article.title}}</h4>
+      <p>{{article.description}}</p>
+      <p>Quantité: {{article.quantity}}</p>
+      <div>
+        <button [disabled]="article.quantity <= 0" (click)="addToPanier(article)">Panier</button>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+
