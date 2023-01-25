@@ -1,0 +1,24 @@
+nav {
+  background-color: var(--light);
+}
+
+nav ul {
+  list-style: none;
+  width: 80%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+a:link, a:visited {
+  color: var(--dark);
+  font-family: var(--title-font);
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary);
+}

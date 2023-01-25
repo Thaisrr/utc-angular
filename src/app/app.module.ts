@@ -9,6 +9,9 @@ import { RainbowPipe } from './utils/pipes/rainbow.pipe';
 import { FilterPipe } from './utils/pipes/filter.pipe';
 import {FormsModule} from "@angular/forms";
 import { SearchPipe } from './utils/pipes/search.pipe';
+import { FormulairesComponent } from './pages/formulaires/formulaires.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { SearchPipe } from './utils/pipes/search.pipe';
     DirectivesComponent,
     RainbowPipe,
     FilterPipe,
-    SearchPipe
+    SearchPipe,
+    FormulairesComponent,
+    NavigationComponent,
+    NotFoundComponent
   ],
     imports: [
         BrowserModule,
