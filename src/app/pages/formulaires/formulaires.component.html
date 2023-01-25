@@ -10,5 +10,18 @@
     <p><b>Username: {{username}}</b></p>
   </div>
 
+  <h2>Connexion</h2>
+  <form (ngSubmit)="login()">
+    <div>
+      <label for="email">Email</label>
+      <input [(ngModel)]="user_login.email" id="email" type="email"/>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input [(ngModel)]="user_login.password" id="password" type="password"/>
+    </div>
+    <button>Connexion</button>
+  </form>
+
 
 </section>

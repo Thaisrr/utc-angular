@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
 export class FormulairesComponent {
 
   username: string = '';
+  user_login = {
+    email: '',
+    password: ''
+  }
+
+  login() {
+    console.log('Login !', this.user_login);
+  }
 
 }
