@@ -7,7 +7,7 @@ import { PresentationComponent } from './pages/presentation/presentation.compone
 import { DirectivesComponent } from './pages/directives/directives.component';
 import { RainbowPipe } from './utils/pipes/rainbow.pipe';
 import { FilterPipe } from './utils/pipes/filter.pipe';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SearchPipe } from './utils/pipes/search.pipe';
 import { FormulairesComponent } from './pages/formulaires/formulaires.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -28,7 +28,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

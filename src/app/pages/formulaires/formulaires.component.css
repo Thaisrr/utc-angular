@@ -1,0 +1,22 @@
+.text-error {
+  color: red;
+}
+input {
+  border: solid var(--dark) 1px;
+  border-radius: 3px;
+}
+input.ng-invalid.ng-touched {
+  border-color: #f85c5c;
+}
+
+input.ng-invalid.ng-touched:focus {
+  outline: rgba(250, 107, 107, 0.38) solid 3px;
+}
+
+input.ng-valid.ng-dirty {
+  border-color: green;
+}
+input.ng-valid.ng-dirty:focus {
+  outline: rgba(0, 128, 0, 0.32) solid 3px;
+}
+
