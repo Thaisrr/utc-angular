@@ -14,6 +14,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FormationsComponent } from './pages/formations/formations.component';
 import { FormationCardComponent } from './components/formation-card/formation-card.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormationCardComponent } from './components/formation-card/formation-ca
     NavigationComponent,
     NotFoundComponent,
     FormationsComponent,
-    FormationCardComponent
+    FormationCardComponent,
+    AlertComponent
   ],
     imports: [
         BrowserModule,
