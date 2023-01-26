@@ -15,6 +15,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { FormationsComponent } from './pages/formations/formations.component';
 import { FormationCardComponent } from './components/formation-card/formation-card.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { RxjsComponent } from './pages/rxjs/rxjs.component';
+import { ObservablesComponent } from './pages/rxjs/observables/observables.component';
+import { SubjectComponent } from './pages/rxjs/subject/subject.component';
+import { HttpComponent } from './pages/rxjs/http/http.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { AlertComponent } from './components/alert/alert.component';
     NotFoundComponent,
     FormationsComponent,
     FormationCardComponent,
-    AlertComponent
+    AlertComponent,
+    RxjsComponent,
+    ObservablesComponent,
+    SubjectComponent,
+    HttpComponent
   ],
     imports: [
         BrowserModule,
