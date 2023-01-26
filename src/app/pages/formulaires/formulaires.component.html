@@ -59,7 +59,7 @@
 <section>
   <h2>Formation</h2>
 
-  <form (ngSubmit)="saveFormation()" [formGroup]="formation_form">
+  <form (ngSubmit)="saveFormation($event)" [formGroup]="formation_form">
     <p class="text-error" *ngIf="formation_form.invalid && formation_form.touched">Attention, il y a des erreurs dans le formulaire !</p>
     <div>
       <label for="title">Titre</label>
@@ -78,7 +78,6 @@
     </div>
     <fieldset formGroupName="trainer">
       <legend>Formateur⋅trice</legend>
-
       <div>
         <label for="first">Prénom</label>
         <input id="first" formControlName="firstname"/>
@@ -93,11 +92,30 @@
 
       <div *ngFor="let cat of all_categories">
         <label [for]="cat">{{cat}}</label>
-        <input type="checkbox" [value]="cat"/>
+        <input [id]="cat" type="checkbox" [value]="cat" (change)="handleCategories($event)"/>
       </div>
     </fieldset>
     <div>
       <button>Sauvegarder</button>
     </div>
   </form>
+
+</section>
+
+<section>
+  <h2>Récap</h2>
+
+  <p>Les réactives forms proposent 3 objets : </p>
+  <ul>
+    <li>FormControl</li>
+    <li>FormGroup</li>
+    <li>FormArray</li>
+  </ul>
+
+  <p>Les FormGroups servent à représenter un objet. On y passe un objet, avec les noms d'attribut
+  de l'objet qu'on souhaite créer, et les attributs peuvent avoir en valeur du FormControl ( pour une valeur simple ),
+  du FormGroup, pour un objet imbriqué, du FormArray, pour un tableau de valeurs.</p>
+
+  <p>Le FormArray prend un tableau de FormGroup, pour un tableau d'objets, FormInput pour un tableau
+  de primitif, ou FormArray.</p>
 </section>

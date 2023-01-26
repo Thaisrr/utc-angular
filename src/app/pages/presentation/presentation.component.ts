@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Form} from "@angular/forms";
+import {Formation} from "../../utils/types/Formation";
 
 @Component({
   selector: 'app-presentation',
@@ -13,6 +15,17 @@ export class PresentationComponent {
   coffee = {
     url: '../../../assets/images/3D-coffee-cup.png',
     description: 'Tasse à café'
+  }
+  formation: Formation = {
+    title: 'Ceci est un test',
+    start: '2022-12-12',
+    trainer: {
+      firstname: 'toto',
+      lastname: 'dupond'
+    },
+    duration: 12,
+    categories: ['Web'],
+    id: 123
   }
 
   displayText() {

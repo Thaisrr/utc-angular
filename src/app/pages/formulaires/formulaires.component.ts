@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Formation} from "../../utils/types/Formation";
+import {FormationsService} from "../../utils/services/formations.service";
 
 @Component({
   selector: 'app-formulaires',
@@ -8,6 +9,8 @@ import {Formation} from "../../utils/types/Formation";
   styleUrls: ['./formulaires.component.css']
 })
 export class FormulairesComponent {
+
+  constructor(private formService: FormationsService) {}
 
   /************* Template driven Form *****/
   username: string = '';
@@ -53,16 +56,19 @@ export class FormulairesComponent {
       firstname: new FormControl(),
       lastname: new FormControl()
     }),
-    categories: new FormArray([])
+    categories: new FormArray<FormControl>([])
   });
 
-  saveFormation() {
+  saveFormation(event: Event) {
     if(this.formation_form.valid) {
       const new_formation: Formation = this.formation_form.value as Formation;
       console.log(new_formation);
+      this.formService.add(new_formation);
+      const form = event.target as HTMLFormElement;
+      form.reset();
+      this.formation_form.reset();
     }
   }
-
 
   getError(control: 'title' | 'start' | 'duration') {
      const input = this.formation_form.controls[control] as FormControl;
@@ -81,4 +87,17 @@ export class FormulairesComponent {
      return '';
   }
 
+  get catArray() {
+    return this.formation_form.controls.categories;
+  }
+
+  handleCategories(event: Event) {
+    const checkbox = event.target as HTMLInputElement;
+    if(checkbox.checked) {
+      this.catArray.push(new FormControl(checkbox.value));
+    } else {
+      const index = this.catArray.controls.findIndex(c => c.value === checkbox.value);
+     this.catArray.removeAt(index);
+    }
+  }
 }

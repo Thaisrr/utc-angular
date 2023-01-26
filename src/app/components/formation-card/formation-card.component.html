@@ -1,0 +1,9 @@
+<div class="card">
+  <h3>{{formation.title}}</h3>
+  <p>-- {{formation.trainer.firstname}} {{formation.trainer.lastname}}</p>
+  <p>Durée : {{formation.duration}} jours</p>
+  <p>Démarrage : {{formation.start}}</p>
+  <p>
+    <button (click)="deleteFormation()">Supprimer</button>
+  </p>
+</div>

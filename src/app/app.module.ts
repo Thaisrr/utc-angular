@@ -12,6 +12,8 @@ import { SearchPipe } from './utils/pipes/search.pipe';
 import { FormulairesComponent } from './pages/formulaires/formulaires.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { FormationsComponent } from './pages/formations/formations.component';
+import { FormationCardComponent } from './components/formation-card/formation-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     SearchPipe,
     FormulairesComponent,
     NavigationComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FormationsComponent,
+    FormationCardComponent
   ],
     imports: [
         BrowserModule,

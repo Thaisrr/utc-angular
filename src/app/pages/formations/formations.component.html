@@ -1,0 +1,14 @@
+<h1>Mes Formations</h1>
+
+<ng-container *ngIf="all_formations?.length; then gridBlock; else errorBlock"></ng-container>
+
+<ng-template #gridBlock>
+  <div class="grid">
+    <app-formation-card *ngFor="let current_formation of all_formations" [formation]="current_formation">
+    </app-formation-card>
+  </div>
+</ng-template>
+<ng-template #errorBlock>
+  <p class="text-error">Aucune formation pour le moment :(</p>
+  <p><a routerLink="/forms">Ajouter une formation</a> </p>
+</ng-template>
