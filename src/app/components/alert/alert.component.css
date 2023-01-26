@@ -1,0 +1,19 @@
+.alert-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 50px 0;
+  width: 100%;
+
+}
+
+.alert {
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #f85c5c;
+  border: solid red 1px;
+  border-radius: 3px;
+  color: white;
+  width: 500px;
+  margin: 0 auto;
+}
