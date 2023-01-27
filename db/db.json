@@ -1,0 +1,47 @@
+{
+  "users" : [],
+  "games": [
+    {
+      "id": 1,
+      "title": "Child of Light",
+      "author": "Ubisoft",
+      "image": "https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_ChildOfLightUltimateEdition_image1600w.jpg"
+    },
+    {
+      "id": 2,
+      "title": "The Witcher",
+      "author": "CD Project",
+      "image": "https://sysrqmts.com/images/games/the-witcher-3-wild-hunt.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Ori and the blind forest",
+      "author": "Moon",
+      "image": "https://www.gameaccessibilitynexus.com/wp-content/uploads/2020/02/Ori-BF-Header.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Horizon Zero Dawn",
+      "author": "Guerilla",
+      "image": "https://static.lpnt.fr/images/2017/02/28/7226797lpw-7233747-article-jpg_4123748_1250x625.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Last of Us",
+      "author": "Naughty Dog",
+      "image": "https://cdn.gamekult.com/images/gallery/75/75983/the-last-of-us-ps3-2c3de23c.jpg"
+    },
+    {
+      "id": 6,
+      "title": "The Last of Us Part II",
+      "author": "Naughty Dog",
+      "image": "https://img.20mn.fr/A5SC04CRQ2qssagSlZUGFA/768x492_ellie-fois-heroine-anti-heroine-the-last-of-us-part-ii"
+    },
+    {
+      "id": 7,
+      "title": "Alice Madness Return",
+      "author": "Spicy Horse",
+      "image": "https://cdn.mcr.ea.com/3/images/8c917af9-9037-4e68-93a8-f8ad2e81932a/1588054829-0x0-0-0.jpg"
+    }
+  ]
+}

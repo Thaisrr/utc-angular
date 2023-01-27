@@ -19,6 +19,7 @@ import { RxjsComponent } from './pages/rxjs/rxjs.component';
 import { ObservablesComponent } from './pages/rxjs/observables/observables.component';
 import { SubjectComponent } from './pages/rxjs/subject/subject.component';
 import { HttpComponent } from './pages/rxjs/http/http.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HttpComponent } from './pages/rxjs/http/http.component';
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
