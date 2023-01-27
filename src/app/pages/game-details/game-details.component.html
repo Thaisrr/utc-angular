@@ -1,0 +1,5 @@
+<h2>Détails</h2>
+<ul *ngIf="game$ | async as game">
+  <li>Nom : {{game.title}}</li>
+  <li>Studio : {{game.author}}</li>
+</ul>

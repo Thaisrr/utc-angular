@@ -1,0 +1,21 @@
+<h1>Games</h1>
+
+<router-outlet></router-outlet>
+
+
+<h2>Tous les jeux : </h2>
+<div class="grid" *ngIf="games$ | async as games; else noGames">
+  <div class="card" *ngFor="let g of games">
+    <div class="img-container">
+      <img [src]="g.image" alt="">
+    </div>
+    <h3>{{g.title}}</h3>
+    <p>By {{g.author}}</p>
+    <p>
+      <a [routerLink]=" 'details/' + g.id">Voir le détail</a>
+    </p>
+  </div>
+</div>
+<ng-template #noGames>
+  <p class="text-error">Aucun jeux à afficher</p>
+</ng-template>
