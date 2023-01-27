@@ -20,6 +20,8 @@ import { ObservablesComponent } from './pages/rxjs/observables/observables.compo
 import { SubjectComponent } from './pages/rxjs/subject/subject.component';
 import { HttpComponent } from './pages/rxjs/http/http.component';
 import {HttpClientModule} from "@angular/common/http";
+import { GamesComponent } from './pages/games/games.component';
+import { GameDetailsComponent } from './pages/game-details/game-details.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import {HttpClientModule} from "@angular/common/http";
     RxjsComponent,
     ObservablesComponent,
     SubjectComponent,
-    HttpComponent
+    HttpComponent,
+    GamesComponent,
+    GameDetailsComponent
   ],
     imports: [
         BrowserModule,

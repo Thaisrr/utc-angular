@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AlertService} from "../../utils/services/alert.service";
 import {Alert} from "../../utils/types/Alert";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-alert',
@@ -8,13 +9,16 @@ import {Alert} from "../../utils/types/Alert";
   styleUrls: ['./alert.component.css']
 })
 export class AlertComponent implements OnInit{
-  alert?: Alert;
+  alert$?: BehaviorSubject<Alert | null> ;
 
   constructor(private alertService: AlertService) {}
 
   ngOnInit() {
-    console.log('coucou')
-    this.alert = this.alertService.current_alert;
+    this.alert$ = this.alertService.alert$;
+  }
+
+  close() {
+    this.alertService.close();
   }
 
 }

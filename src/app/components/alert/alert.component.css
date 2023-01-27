@@ -4,16 +4,31 @@
   left: 0;
   padding: 50px 0;
   width: 100%;
+}
 
+.error {
+  background-color: #f85c5c;
+  border: solid red 1px;
+  color: white;
+}
+
+.success {
+  background-color: #66f85c;
+  border: solid #078703 1px;
+  color: white;
+}
+
+.info, .alert {
+  background-color: #4fa7cc;
+  border: solid #008cff 1px;
+  color: white;
 }
 
 .alert {
   padding: 10px 20px;
   text-align: center;
-  background-color: #f85c5c;
-  border: solid red 1px;
+
   border-radius: 3px;
-  color: white;
   width: 500px;
   margin: 0 auto;
 }

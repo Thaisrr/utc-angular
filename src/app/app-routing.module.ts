@@ -10,6 +10,8 @@ import {ObservablesComponent} from "./pages/rxjs/observables/observables.compone
 import {Subject} from "rxjs";
 import {SubjectComponent} from "./pages/rxjs/subject/subject.component";
 import {HttpComponent} from "./pages/rxjs/http/http.component";
+import {GamesComponent} from "./pages/games/games.component";
+import {GameDetailsComponent} from "./pages/game-details/game-details.component";
 
 const routes: Routes = [
   {path: '', component: PresentationComponent},
@@ -20,7 +22,12 @@ const routes: Routes = [
       {path: 'observables', component: ObservablesComponent},
       {path: 'subject', component: SubjectComponent},
       {path: 'http', component: HttpComponent},
-    ]},
+    ]
+  },
+  {path: 'games', component: GamesComponent, children: [
+      {path: 'details/:id', component: GameDetailsComponent}
+    ]
+  },
   {path: 'accueil', redirectTo: ''},
   {path: 'acceuil', redirectTo: ''},
   {path: '**', component: NotFoundComponent}

@@ -1,5 +1,8 @@
-<div *ngIf="alert && alert?.message" class="alert-container">
-  <div class="alert">
-    {{alert?.message}}
+<div (click)="close()"
+     *ngIf="alert$ | async as alert"
+     class="alert-container"
+>
+  <div class="alert" [ngClass]="alert.level">
+    {{alert.message}}
   </div>
 </div>
