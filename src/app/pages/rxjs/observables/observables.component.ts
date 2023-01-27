@@ -98,7 +98,10 @@ export class ObservablesComponent implements OnInit, AfterViewInit, OnDestroy{
       map(book => `"${book.title}", by ${book.author}`),
       toArray(), // créer un tableau avec tous les observables renvoyés
       finalize(() => console.log(`Fin de l'observable ( error ou complete )`))
-    ).subscribe(res => console.log('[Books : ]', res));
+    ).subscribe( {
+      next: res => console.log('[Books : ]', res),
+      complete: () => console.warn('Books observable completed')
+    });
   } // fin du ngOnInit
 
   //dans le faux service
