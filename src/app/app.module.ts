@@ -22,6 +22,8 @@ import { HttpComponent } from './pages/rxjs/http/http.component';
 import {HttpClientModule} from "@angular/common/http";
 import { GamesComponent } from './pages/games/games.component';
 import { GameDetailsComponent } from './pages/game-details/game-details.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SecretComponent } from './pages/secret/secret.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { GameDetailsComponent } from './pages/game-details/game-details.componen
     SubjectComponent,
     HttpComponent,
     GamesComponent,
-    GameDetailsComponent
+    GameDetailsComponent,
+    LoginComponent,
+    SecretComponent
   ],
     imports: [
         BrowserModule,

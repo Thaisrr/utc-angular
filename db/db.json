@@ -1,5 +1,16 @@
 {
-  "users" : [],
+  "users": [
+    {
+      "email": "toto@mail.fr",
+      "password": "$2a$10$trVViSoteBOWgY2Ab.0N9etP/HhiE3w6gFiBSIlTh2sXbrtc2BQAq",
+      "id": 1
+    },
+    {
+      "email": "toto@mail.com",
+      "password": "$2a$10$/myodK3nT4oiggIr1cENp.GXgc17zJ0plr1d4eonnj2CXcuF.hbom",
+      "id": 2
+    }
+  ],
   "games": [
     {
       "id": 1,

@@ -18,5 +18,16 @@
     <li>
       <a routerLink="/games">Games</a>
     </li>
+    <ng-container *ngIf="isLogged$ | async; then loggedBlock; else anonymousBlock"></ng-container>
+    <ng-template #anonymousBlock>
+      <li>
+        <a routerLink="/login">Login</a>
+      </li>
+    </ng-template>
+    <ng-template #loggedBlock>
+      <li>
+        <button (click)="logout()">LOGOUT</button>
+      </li>
+    </ng-template>
   </ul>
 </nav>

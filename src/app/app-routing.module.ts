@@ -7,11 +7,12 @@ import {NotFoundComponent} from "./pages/not-found/not-found.component";
 import {FormationsComponent} from "./pages/formations/formations.component";
 import {RxjsComponent} from "./pages/rxjs/rxjs.component";
 import {ObservablesComponent} from "./pages/rxjs/observables/observables.component";
-import {Subject} from "rxjs";
 import {SubjectComponent} from "./pages/rxjs/subject/subject.component";
 import {HttpComponent} from "./pages/rxjs/http/http.component";
 import {GamesComponent} from "./pages/games/games.component";
 import {GameDetailsComponent} from "./pages/game-details/game-details.component";
+import {LoginComponent} from "./pages/login/login.component";
+import {SecretComponent} from "./pages/secret/secret.component";
 
 const routes: Routes = [
   {path: '', component: PresentationComponent},
@@ -28,6 +29,8 @@ const routes: Routes = [
       {path: 'details/:id', component: GameDetailsComponent}
     ]
   },
+  {path: 'login', component: LoginComponent},
+  {path: 'secret', component: SecretComponent},
   {path: 'accueil', redirectTo: ''},
   {path: 'acceuil', redirectTo: ''},
   {path: '**', component: NotFoundComponent}
