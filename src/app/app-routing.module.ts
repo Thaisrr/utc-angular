@@ -13,6 +13,7 @@ import {GamesComponent} from "./pages/games/games.component";
 import {GameDetailsComponent} from "./pages/game-details/game-details.component";
 import {LoginComponent} from "./pages/login/login.component";
 import {SecretComponent} from "./pages/secret/secret.component";
+import {AuthGuard} from "./utils/guards/auth.guard";
 
 const routes: Routes = [
   {path: '', component: PresentationComponent},
@@ -30,7 +31,7 @@ const routes: Routes = [
     ]
   },
   {path: 'login', component: LoginComponent},
-  {path: 'secret', component: SecretComponent},
+  {path: 'secret', component: SecretComponent, canActivate: [AuthGuard]},
   {path: 'accueil', redirectTo: ''},
   {path: 'acceuil', redirectTo: ''},
   {path: '**', component: NotFoundComponent}

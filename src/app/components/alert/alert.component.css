@@ -13,12 +13,12 @@
 }
 
 .success {
-  background-color: #66f85c;
+  background-color: #72ce6e;
   border: solid #078703 1px;
   color: white;
 }
 
-.info, .alert {
+.info {
   background-color: #4fa7cc;
   border: solid #008cff 1px;
   color: white;
